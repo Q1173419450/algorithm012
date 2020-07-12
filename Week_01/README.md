@@ -122,3 +122,25 @@ O(logn)
 O(logn)
 
 空间换时间
+
+### 栈（Stack）
+
+先入后出（LIFO）；添加、删除皆为 O(1);
+
+### 队列（Queue）
+
+先入先出；添加、删除皆为 O(1);
+
+### 双端队列（Double-End Queue）
+
+添加、删除皆为 O(1);
+
+### Priority Queue（优先队列）
+
+按照元素优先级去弹出数据
+
+插入操作：（O(1)）
+
+取出：（O(logN)）- 按元素优先级取出 - comparator
+
+底层具体实现的数据结构较为多样和复杂：heap（堆）、bst、treap
