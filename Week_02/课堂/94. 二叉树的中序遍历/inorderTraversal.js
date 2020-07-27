@@ -29,7 +29,6 @@ var inorderTraversal = function(root) {
   let result = [];
   let stack = [];
 
-
   while(root!== null || stack.length > 0) {
     if(root.left) {
       stack.push(root);

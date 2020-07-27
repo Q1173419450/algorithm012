@@ -59,19 +59,18 @@ class BST {
     let result = [];
     let stack = [];
 
-
     while (this.root !== null || stack.length > 0) {
-      debugger
+      console.log(this.root.left)
       if (this.root.left) {
         stack.push(this.root);
         this.root = this.root.left;
       } else if (!this.root.left && !this.root.right) {
         result.push(this.root.data);
-        root = stack.pop();
-        root && (this.root.left = null)
+        this.root = stack.pop();
+        this.root && (this.root.left = null)
       } else {
         result.push(this.root.data);
-        root = this.root.right;
+        this.root = this.root.right;
       }
     }
 
@@ -98,33 +97,6 @@ class BST {
     return backs;
   }
 
-  perOrder2() { // 栈解法
-    const list = [];
-    const stack = [];
-
-    if (this.root) stack.push(this.root);
-    while (stack.length > 0) {
-      const curNode = stack.pop();
-
-      list.push(curNode.data);
-      while (stack.length > 0) {
-        const curNode = stack.pop();
-
-        list.push(curNode.val);
-        if (curNode.left !== null) {
-          stack.push(curNode.left);
-        }
-
-        if (curNode.right !== null) {
-          stack.push(curNode.right);
-        }
-
-      }
-    }
-
-    return list;
-  }
-
   /* 后序 */
   nextOrder() {
     let back = [];
@@ -146,7 +118,7 @@ class BST {
   }
 }
 
-let datas = [11, 7, 5, 3, 6, 9, 8, 10, 20, 14, 12, 25, 18];
+let datas = [1, null, 2, 3];
 
 let bst = new BST();
 
