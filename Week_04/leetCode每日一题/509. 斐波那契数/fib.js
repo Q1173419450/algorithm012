@@ -14,6 +14,7 @@ var fib = function(N) {
 
 /* 
   hash map
+  记忆化搜索
 */
 
 var fib = function(N) {

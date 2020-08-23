@@ -13,6 +13,23 @@
 - 最近重复子问题
 - 数学归纳法
 
+```js
+function recur(level, param) {
+    // 递归终止条件
+    if (level > Max_LEVEL) {
+        return
+    }
+
+    // 处理当前层逻辑
+    process(level, param);
+
+    // 下探下一层
+    recur(level, newParam)
+
+    // 恢复当前层状态
+}
+```
+
 ### 分治算法
 
 分治算法是一种处理问题的思想，递归是一种编程技巧。
@@ -24,6 +41,26 @@
 - 合并：将子问题的结果合并成原问题。
 
 > 解决的问题
+
+```js
+const divide_conquer = (problem, params) => {
+    // 递归终止条件
+    if (problem == null) {
+        process_result
+        return
+    }
+
+    subProblems = split_problem(problem, data);
+    subResult1 = divide_conquer(subProblems[0], p1);
+    subResult2 = divide_conquer(subProblems[1], p1);
+    subResult3 = divide_conquer(subProblems[2], p1);
+
+    // 合并
+    result = process_result(subResult1, subResult2, subResult3);
+
+    // 保存当前层状态
+}
+```
 
 ### 回溯
 
