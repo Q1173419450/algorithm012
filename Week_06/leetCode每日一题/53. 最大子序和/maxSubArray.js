@@ -11,10 +11,8 @@
 //     } else {
 //       sum = num
 //     }
-
 //     ans = Math.max(ans, sum);
 //   }
-
 //   return ans;
 // };
 

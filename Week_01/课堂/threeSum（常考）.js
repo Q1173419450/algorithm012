@@ -24,8 +24,8 @@ var threeSum = function(nums) {
       if (sum == 0) {
 
         arr.push([nums[i], nums[L], nums[R]]);
-        while (L < R && nums[L] == nums[L + 1]) L++;  // 当 sum == 0 时，nums[L]nums[L] == nums[L+1]nums[L+1] 则会导致结果重复，应该跳过  O(1)
-        while (L < R && nums[R] == nums[R - 1]) R--;  // 当 sum == 0 时，nums[R]nums[R] == nums[R-1]nums[R−1] 则会导致结果重复，应该跳过  O(1)
+        while (L < R && nums[L] == nums[L + 1]) L++;  // 当 sum == 0 时，nums[L] == nums[L+1] 则会导致结果重复，应该跳过  O(1)
+        while (L < R && nums[R] == nums[R - 1]) R--;  // 当 sum == 0 时，nums[R] == nums[R−1] 则会导致结果重复，应该跳过  O(1)
 
         L++
         R--
