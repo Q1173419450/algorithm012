@@ -75,9 +75,16 @@ var coinChange = function(coins, amount) {
   for(let i = 1; i <= amount; i++) {
     for(let coin of coins) {
       if(i - coin >= 0) {
+        // 凑成面值为 11 的最少硬币个数可以由以下三者的最小值得到：
+        // 凑成面值为 10 的最少硬币个数 + 面值为 1 的这一枚硬币；
+        // 凑成面值为 99 的最少硬币个数 + 面值为 2 的这一枚硬币；
+        // 凑成面值为 66 的最少硬币个数 + 面值为 5 的这一枚硬币。
         memo[i] = Math.min(memo[i], memo[i - coin] + 1);
       }
     }
   }
   return memo[amount] == (amount + 1) ? -1 : memo[amount];
 }
+
+let coins = [1, 2, 5], amount = 11;
+coinChange(coins, amount);

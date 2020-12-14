@@ -9,12 +9,14 @@ var change = function(amount, coins) {
     if (amount == 0) return 1;
     return 0
   }
-  let dp = Array.from({length: len}, () => new Array(amount + 1));
+  let dp = Array.from({length: len}, () => new Array(amount + 1).fill(0));
   dp[0][0] = 1;
 
   for(let i = coins[0]; i <= amount; i += coins[0]) {
     dp[0][i] = 1;
   }
+
+  console.log(dp)
 
   for(let i = 1; i < len; i++) {
     for(let j = 0; j <= amount; j++) {
@@ -26,3 +28,7 @@ var change = function(amount, coins) {
   }
   return dp[len - 1][amount];
 };
+
+let amount = 3;
+let coins = [2];
+console.log(change(amount, coins))
